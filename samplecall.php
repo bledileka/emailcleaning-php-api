@@ -1,9 +1,8 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 /* initialize the class with main configs */
-use Bledileka\Cleanlist;
 
-$Start = new Bledileka\Cleanlist\Apicall (
+$Start = new \Cleanlist\Verification\Apicall (
 	[
 		"api_key" => "90C5626330E03D5C1799DF270AF7A114528B6F40", // set your api key
 		"api_url" => "http://api.clean.loc/"

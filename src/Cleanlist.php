@@ -2,8 +2,7 @@
 /*
  * Simple interface to make api calls to cleanlist api endpoints.
  */
-
-namespace Bledileka\Cleanlist;
+namespace Cleanlist\Verification;
 
 class Apicall
 {
