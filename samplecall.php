@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
-/* initialize the ems class with main configs */
+/* initialize the class with main configs */
 use Bledileka\Cleanlist;
 
 $Start = new Bledileka\Cleanlist\Apicall (

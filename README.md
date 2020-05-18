@@ -1,12 +1,12 @@
-# ems-php-api
-A simple php interface to work with EMS api endpoints.
+# cleanlist-php-api
+Simple interface to make api calls to cleanlist api endpoints.
 
 Sample use:
 
 ```php
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
-/* initialize the ems class with main configs */
+/* initialize the class with main configs */
 use Bledileka\Cleanlist;
 
 $Start = new Bledileka\Cleanlist\Apicall (
