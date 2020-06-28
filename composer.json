@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-0": {
-      "Emailcleaningclub": "src/"
+      "emailcleaningclub\\emailcleaning-php-api\\": "src/"
     }
   },
   "minimum-stability": "dev",
