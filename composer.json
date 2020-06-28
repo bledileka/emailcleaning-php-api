@@ -1,6 +1,6 @@
 {
   "name": "emailcleaningclub/emailcleaning-php-api",
-  "description": "Simple interface to make api calls to mailCleaning.club endpoints.",
+  "description": "Simple interface to make api calls to EmailCleaning.club endpoints.",
   "type": "library",
   "license": "MIT",
   "authors": [
