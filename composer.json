@@ -11,12 +11,10 @@
     }
   ],
   "require": {
-    "php": ">=5.4",
-    "ext-curl": "*",
-    "ext-json": "*"
+    "php": ">=5.4"
   },
   "autoload": {
-    "psr-0": {
+    "psr-4": {
       "\\Emailcleaningclub\\Verification\\": "src/"
     }
   },
