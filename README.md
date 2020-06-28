@@ -1,4 +1,4 @@
-![EmailCleaning.Club](https://emailcleaning.club/wp-content/uploads/2020/06/cropped-logo.fw_-2-2.png)
+![EmailCleaning.Club](https://emailcleaning.club/wp-content/uploads/emailcleaningclublogo.png)
 
 [EmailCleaning.Club](https://emailcleaning.club)
 # emailcleaning-php-api
