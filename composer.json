@@ -14,10 +14,7 @@
   },
   "autoload": {
     "psr-0": {
-      "Cleanlist": "src/"
-    },
-    "psr-4": {
-      "\\Vendor\\Emailcleaningclub\\Verification": "src/Verification.php"
+      "Emailcleaningclub": "src/"
     }
   },
 
