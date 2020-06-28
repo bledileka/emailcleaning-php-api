@@ -1,6 +1,6 @@
 <?php
 /*
- * Simple interface to make api calls to cleanlist api endpoints.
+ * Simple interface to make api calls to EmailCleaning.club api endpoints.
  */
 
 namespace Emailcleaningclub\Verification;

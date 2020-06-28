@@ -1,8 +1,9 @@
 {
   "name": "emailcleaningclub/emailcleaning-php-api",
-  "description": "Simple interface to make api calls to cleanlist api endpoints.",
+  "description": "Simple interface to make api calls to mailCleaning.club endpoints.",
   "type": "library",
   "license": "MIT",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Bledar Leka",
@@ -10,11 +11,13 @@
     }
   ],
   "require": {
-    "php": ">=5.4"
+    "php": ">=5.4",
+    "ext-curl": "*",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-0": {
-      "Emailcleaningclub": "src/"
+      "Emailcleaningclub\\Verification": "src/"
     }
   },
 
