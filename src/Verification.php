@@ -2,35 +2,24 @@
 /*
  * Simple interface to make api calls to cleanlist api endpoints.
  */
-namespace Cleanlist\Verification;
+
+namespace Emailcleaningclub\Verification;
 
 class Apicall
 {
-	public function __construct($configs)
+	public function __construct($api_key)
 	{
 
-		if (isset($configs["api_key"]) && $configs["api_key"] != "") {
-			$this->apiKEY = trim(strip_tags($configs["api_key"]));
+		if (isset($api_key) && $api_key != "") {
+			$this->apiKEY = trim(strip_tags($api_key));
 		} else {
 			/* no api key ?*/
-			die('Please set an api key!');
+			die('Please provide an api key!');
 		}
-
-		if (isset($configs["api_url"]) && $configs["api_url"] != "") {
-			$this->apiURL = trim(strip_tags($configs["api_url"]));
-		} else {
-			/* no api key ?*/
-			die('Please set an Url!');
-		}
-
+		$this->apiURL = "http://api.emailcleaning.club/api/v1/";
 	}
 
 	public function _call($options)
-	{
-		return $this->_curlGet($options);
-	}
-
-	public function _curlGet($options = NULL)
 	{
 		if (isset($options) && is_array($options)) {
 			$str = "";
@@ -61,7 +50,7 @@ class Apicall
 			CURLOPT_FOLLOWLOCATION => true,
 			CURLOPT_AUTOREFERER => true,
 			CURLOPT_CONNECTTIMEOUT => 120,
-			CURLOPT_TIMEOUT => 120,
+			CURLOPT_TIMEOUT => 30,
 			CURLOPT_MAXREDIRS => 10,
 			CURLOPT_SSL_VERIFYHOST => 0,
 			CURLOPT_SSL_VERIFYPEER => 0
@@ -72,22 +61,24 @@ class Apicall
 
 		if ($errno = curl_errno($ch)) {
 			$error_message = curl_strerror($errno);
-			echo "FATAL --> cURL error: ({$errno}): {$error_message}\n\n";
+			die("FATAL --> cURL error: ({$errno}): {$error_message}");
 		}
 
 		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 		curl_close($ch);
 
 		if ($httpCode == 0) {
-			echo "cURL call failed!";
+			die("cURL call failed. Please make sure the API endpoint url is reacheable!");
 		} else {
 			return json_decode($result, true);
 		}
-
 	}
 
 	function urlencodeAPI($string)
 	{
+		/*
+		 * Simple function to format/encode some particular cases
+		 */
 		if (!is_array($string)) {
 			$str = urlencode($string);
 			$str = str_replace("%28", "(", $str);
@@ -95,8 +86,7 @@ class Apicall
 			$str = str_replace("%3D", "=", $str);
 			$str = str_replace("%2C", ",", $str);
 			$str = str_replace("%21", "!", $str);
-			$str = str_replace("+", "%20", $str);
-			return $str;
+			return str_replace("+", "%20", $str);
 		} else {
 			$return = "";
 			if (isset($string[0])) {
@@ -114,5 +104,4 @@ class Apicall
 			return $return;
 		}
 	}
-
 }

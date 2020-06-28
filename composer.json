@@ -1,5 +1,5 @@
 {
-  "name": "bledileka/cleanlist-php-api",
+  "name": "emailcleaningclub/emailcleaning-php-api",
   "description": "Simple interface to make api calls to cleanlist api endpoints.",
   "type": "library",
   "license": "MIT",
@@ -14,8 +14,12 @@
   },
   "autoload": {
     "psr-0": {
-      "Ems": "src/"
+      "Cleanlist": "src/"
+    },
+    "psr-4": {
+      "\\Vendor\\Emailcleaningclub\\Verification": "src/Verification.php"
     }
   },
+
   "prefer-stable": true
 }
