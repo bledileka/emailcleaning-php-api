@@ -20,10 +20,11 @@ Sample call:
  * Sample call - Make sure to whitelist your servers ip address on your account in order to have proper responses
  */
 
-require_once 'vendor/autoload.php';
+require 'vendor/autoload.php';
+use Emailcleaningclub\Verification\Apicall;
 /* initialize the class with main configs */
 
-$Start = new \Emailcleaningclub\Verification\Apicall ("90C5626330E03D5C1799DF270AF7A114528B6F40");
+$Start = new Apicall("90C5626330E03D5C1799DF270AF7A114528B6F40");
 
 /* sample call to check/verify an email address */
 $payload = [
